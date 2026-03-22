@@ -4,346 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora Bolsa Família 2026 — Conecta Social</title>
-<meta property="og:title"       content="Calculadora Bolsa Família 2026">
+<meta property="og:title" content="Calculadora Bolsa Família 2026">
 <meta property="og:description" content="Descubra o valor do benefício da sua família em poucos passos. Gratuito, sem cadastro — Regras 2026.">
-<meta property="og:type"        content="website">
-<meta property="og:image"       content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png">
-<meta property="og:locale"      content="pt_BR">
-<meta name="description"        content="Descubra o valor do benefício da sua família. Ferramenta oficial do Conecta Social — Regras 2026.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/320px-Flag_of_Brazil.svg.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="description" content="Descubra o valor do benefício da sua família. Ferramenta oficial do Conecta Social — Regras 2026.">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --azul:     #1155BB;
-  --azul-esc: #0D3D8A;
-  --azul-cl:  #E8F0FB;
-  --verde:    #1A7A4A;
-  --verde-cl: #E6F5EE;
-  --verde-md: #28A860;
-  --verm:     #C02020;
-  --verm-cl:  #FDEAEA;
-  --laranja:  #D06010;
-  --lar-cl:   #FEF0E0;
-  --teal:     #1A6B5E;
-  --teal-cl:  #E3F4F1;
-  --cinza:    #F4F4F4;
-  --cinza2:   #E0E0E0;
-  --cinza3:   #999;
-  --branco:   #FFFFFF;
-  --texto:    #1A1A1A;
-  --sombra:   0 3px 16px rgba(0,0,0,0.09);
-  --sombra2:  0 6px 28px rgba(0,0,0,0.13);
-  --r:        20px;
-  --r2:       14px;
+  --azul:    #1155BB;
+  --azul-esc:#0D3D8A;
+  --azul-cl: #E8F0FB;
+  --verde:   #1A7A4A;
+  --verde-cl:#E6F5EE;
+  --verde-md:#28A860;
+  --verm:    #C02020;
+  --verm-cl: #FDEAEA;
+  --laranja: #D06010;
+  --lar-cl:  #FEF0E0;
+  --teal:    #1A6B5E;
+  --teal-cl: #E3F4F1;
+  --cinza:   #F4F4F4;
+  --cinza2:  #E0E0E0;
+  --cinza3:  #999;
+  --branco:  #FFFFFF;
+  --texto:   #1A1A1A;
+  --sombra:  0 3px 16px rgba(0,0,0,0.09);
+  --sombra2: 0 6px 28px rgba(0,0,0,0.13);
+  --r:       20px;
+  --r2:      14px;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: #E8EFF8;
-  color: var(--texto);
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-}
-.marca-bar {
-  background: #0A2E6A;
-  padding: 10px 20px;
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  border-bottom: 3px solid #F9C74F;
-}
-.marca-logo { display: flex; align-items: center; gap: 10px; }
-.marca-icone {
-  width: 38px; height: 38px;
-  background: linear-gradient(135deg, #1A7A4A, #28A860);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); flex-shrink: 0;
-}
-.marca-nome {
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(20px, 5vw, 28px); font-weight: 900;
-  color: #FFF; letter-spacing: -0.5px; line-height: 1;
-}
-.marca-nome span { color: #F9C74F; }
-.marca-divisor { width: 2px; height: 32px; background: rgba(255,255,255,0.25); border-radius: 2px; }
-.marca-tag {
-  font-size: 12px; font-weight: 800; color: rgba(255,255,255,0.65);
-  text-transform: uppercase; letter-spacing: 1px; line-height: 1.3;
-}
-.marca-tag strong { display: block; font-size: 13px; color: rgba(255,255,255,0.9); }
-.topo {
-  background: linear-gradient(150deg, #0D3D8A 0%, #1155BB 55%, #1A7A4A 100%);
-  padding: 28px 20px; text-align: center; position: relative; overflow: hidden;
-}
-.topo::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
-  background: linear-gradient(90deg, #27AE60, #F9C74F, #27AE60);
-}
-.topo-flag { font-size: 50px; display: block; margin-bottom: 10px; }
-.topo h1 {
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(28px, 7vw, 44px); font-weight: 900; color: #FFF;
-  line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 10px;
-}
-.topo-sub {
-  color: rgba(255,255,255,0.88); font-size: clamp(15px, 3.5vw, 19px); font-weight: 700;
-  max-width: 500px; margin: 0 auto 18px;
-}
-.topo-selos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-.topo-selo {
-  background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3);
-  color: #FFF; font-family: 'Nunito', sans-serif;
-  font-size: 13px; font-weight: 800; padding: 5px 13px; border-radius: 30px;
-}
-.pg { max-width: 700px; margin: 0 auto; padding: 24px 14px 60px; }
-.bloco {
-  background: var(--branco); border-radius: var(--r); box-shadow: var(--sombra);
-  margin-bottom: 20px; overflow: hidden; border: 3px solid transparent;
-}
-.bloco-resultado { border-color: var(--verde-md); }
-.bloco-cab { display: flex; align-items: center; gap: 14px; padding: 18px 22px; }
-.bloco-cab.azul  { background: var(--azul-cl);  border-bottom: 2px solid #C0D0F0; }
-.bloco-cab.verde { background: var(--verde-cl); border-bottom: 2px solid #A0D8B8; }
-.num-passo {
-  width: 52px; height: 52px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 900;
-  color: #FFF; flex-shrink: 0; box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-.num-passo.azul  { background: var(--azul); }
-.num-passo.verde { background: var(--verde); }
-.bloco-cab-titulo {
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(17px, 4vw, 22px); font-weight: 900; line-height: 1.2;
-}
-.azul  .bloco-cab-titulo { color: var(--azul-esc); }
-.verde .bloco-cab-titulo { color: var(--verde); }
-.bloco-cab-dica { font-size: 14px; font-weight: 700; margin-top: 3px; color: #5570A0; }
-.verde .bloco-cab-dica { color: #2A6A40; }
-.bloco-corpo { padding: 22px; }
-.label-campo {
-  font-family: 'Nunito', sans-serif; font-size: 19px; font-weight: 900;
-  color: var(--texto); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
-}
-.btn-sem-renda {
-  width: 100%; display: flex; align-items: center; gap: 16px;
-  background: var(--cinza); border: 3px solid var(--cinza2);
-  border-radius: var(--r2); padding: 16px 20px; cursor: pointer;
-  transition: all .2s; margin-bottom: 14px;
-  -webkit-tap-highlight-color: transparent; text-align: left;
-}
-.btn-sem-renda:hover { border-color: var(--azul); background: var(--azul-cl); }
-.btn-sem-renda.marcado { background: #FFF3E0; border-color: var(--laranja); box-shadow: 0 0 0 4px rgba(208,96,16,0.12); }
-.bsr-check {
-  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
-  border: 3px solid var(--cinza2); background: var(--branco);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; transition: all .2s;
-}
-.btn-sem-renda.marcado .bsr-check { background: var(--laranja); border-color: var(--laranja); color: #FFF; }
-.bsr-titulo {
-  font-family: 'Nunito', sans-serif; font-size: clamp(16px, 4vw, 20px);
-  font-weight: 900; color: var(--texto); line-height: 1.2;
-}
-.btn-sem-renda.marcado .bsr-titulo { color: var(--laranja); }
-.bsr-desc { font-size: 14px; font-weight: 700; color: var(--cinza3); margin-top: 3px; }
-.btn-sem-renda.marcado .bsr-desc { color: #A05010; }
-.divisor-ou { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.divisor-linha { flex: 1; height: 2px; background: var(--cinza2); }
-.divisor-txt {
-  font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 900;
-  color: var(--cinza3); padding: 0 4px; letter-spacing: 1px;
-}
-.input-renda-wrap {
-  display: flex; align-items: stretch; border: 3px solid var(--cinza2);
-  border-radius: var(--r2); overflow: hidden; transition: border-color .2s, box-shadow .2s;
-}
-.input-renda-wrap:focus-within { border-color: var(--azul); box-shadow: 0 0 0 4px rgba(17,85,187,0.12); }
-.input-renda-wrap.bloqueado { opacity: 0.4; pointer-events: none; }
-.input-rs {
-  background: var(--azul); color: #FFF; font-family: 'Nunito', sans-serif;
-  font-size: 22px; font-weight: 900; padding: 14px 18px; flex-shrink: 0;
-  display: flex; align-items: center;
-}
-.input-renda-wrap input {
-  flex: 1; border: none; outline: none; font-family: 'Nunito', sans-serif;
-  font-size: clamp(26px, 6vw, 36px); font-weight: 900; color: var(--texto);
-  padding: 14px 16px; background: var(--cinza); min-width: 0;
-  -moz-appearance: textfield;
-}
-.input-renda-wrap input::placeholder { color: #CCC; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#E8EFF8;color:var(--texto);font-family:'Nunito Sans',sans-serif;font-size:17px;line-height:1.5;-webkit-text-size-adjust:100%}
+
+/* MARCA */
+.marca-bar{background:#0A2E6A;padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:12px;border-bottom:3px solid #F9C74F}
+.marca-logo{display:flex;align-items:center;gap:10px}
+.marca-icone{width:38px;height:38px;background:linear-gradient(135deg,#1A7A4A,#28A860);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 2px 8px rgba(0,0,0,0.3);flex-shrink:0}
+.marca-nome{font-family:'Nunito',sans-serif;font-size:clamp(20px,5vw,28px);font-weight:900;color:#FFF;letter-spacing:-0.5px;line-height:1}
+.marca-nome span{color:#F9C74F}
+.marca-divisor{width:2px;height:32px;background:rgba(255,255,255,0.25);border-radius:2px}
+.marca-tag{font-size:12px;font-weight:800;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;line-height:1.3}
+.marca-tag strong{display:block;font-size:13px;color:rgba(255,255,255,0.9)}
+
+/* TOPO */
+.topo{background:linear-gradient(150deg,#0D3D8A 0%,#1155BB 55%,#1A7A4A 100%);padding:28px 20px;text-align:center;position:relative;overflow:hidden}
+.topo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#27AE60,#F9C74F,#27AE60)}
+.topo-flag{font-size:50px;display:block;margin-bottom:10px}
+.topo h1{font-family:'Nunito',sans-serif;font-size:clamp(28px,7vw,44px);font-weight:900;color:#FFF;line-height:1.15;letter-spacing:-0.5px;margin-bottom:10px}
+.topo-sub{color:rgba(255,255,255,0.88);font-size:clamp(15px,3.5vw,19px);font-weight:700;max-width:500px;margin:0 auto 18px}
+.topo-selos{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.topo-selo{background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);color:#FFF;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;padding:5px 13px;border-radius:30px}
+
+/* LAYOUT */
+.pg{max-width:700px;margin:0 auto;padding:24px 14px 60px}
+.bloco{background:var(--branco);border-radius:var(--r);box-shadow:var(--sombra);margin-bottom:20px;overflow:hidden;border:3px solid transparent}
+.bloco-resultado{border-color:var(--verde-md)}
+.bloco-cab{display:flex;align-items:center;gap:14px;padding:18px 22px}
+.bloco-cab.azul{background:var(--azul-cl);border-bottom:2px solid #C0D0F0}
+.bloco-cab.verde{background:var(--verde-cl);border-bottom:2px solid #A0D8B8}
+.num-passo{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;color:#FFF;flex-shrink:0;box-shadow:0 3px 10px rgba(0,0,0,0.2)}
+.num-passo.azul{background:var(--azul)}
+.num-passo.verde{background:var(--verde)}
+.bloco-cab-titulo{font-family:'Nunito',sans-serif;font-size:clamp(17px,4vw,22px);font-weight:900;line-height:1.2}
+.azul .bloco-cab-titulo{color:var(--azul-esc)}
+.verde .bloco-cab-titulo{color:var(--verde)}
+.bloco-cab-dica{font-size:14px;font-weight:700;margin-top:3px;color:#5570A0}
+.verde .bloco-cab-dica{color:#2A6A40}
+.bloco-corpo{padding:22px}
+
+/* RENDA */
+.label-campo{font-family:'Nunito',sans-serif;font-size:19px;font-weight:900;color:var(--texto);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.btn-sem-renda{width:100%;display:flex;align-items:center;gap:16px;background:var(--cinza);border:3px solid var(--cinza2);border-radius:var(--r2);padding:16px 20px;cursor:pointer;transition:all .2s;margin-bottom:14px;-webkit-tap-highlight-color:transparent;text-align:left}
+.btn-sem-renda:hover{border-color:var(--azul);background:var(--azul-cl)}
+.btn-sem-renda.marcado{background:#FFF3E0;border-color:var(--laranja);box-shadow:0 0 0 4px rgba(208,96,16,0.12)}
+.bsr-check{width:36px;height:36px;border-radius:50%;flex-shrink:0;border:3px solid var(--cinza2);background:var(--branco);display:flex;align-items:center;justify-content:center;font-size:20px;transition:all .2s}
+.btn-sem-renda.marcado .bsr-check{background:var(--laranja);border-color:var(--laranja);color:#FFF}
+.bsr-titulo{font-family:'Nunito',sans-serif;font-size:clamp(16px,4vw,20px);font-weight:900;color:var(--texto);line-height:1.2}
+.btn-sem-renda.marcado .bsr-titulo{color:var(--laranja)}
+.bsr-desc{font-size:14px;font-weight:700;color:var(--cinza3);margin-top:3px}
+.btn-sem-renda.marcado .bsr-desc{color:#A05010}
+.divisor-ou{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.divisor-linha{flex:1;height:2px;background:var(--cinza2)}
+.divisor-txt{font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;color:var(--cinza3);padding:0 4px;letter-spacing:1px}
+.input-renda-wrap{display:flex;align-items:stretch;border:3px solid var(--cinza2);border-radius:var(--r2);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.input-renda-wrap:focus-within{border-color:var(--azul);box-shadow:0 0 0 4px rgba(17,85,187,0.12)}
+.input-renda-wrap.bloqueado{opacity:0.4;pointer-events:none}
+.input-rs{background:var(--azul);color:#FFF;font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;padding:14px 18px;flex-shrink:0;display:flex;align-items:center}
+.input-renda-wrap input{flex:1;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:clamp(26px,6vw,36px);font-weight:900;color:var(--texto);padding:14px 16px;background:var(--cinza);min-width:0;-moz-appearance:textfield}
+.input-renda-wrap input::placeholder{color:#CCC}
 .input-renda-wrap input::-webkit-outer-spin-button,
-.input-renda-wrap input::-webkit-inner-spin-button { -webkit-appearance: none; }
-.dica-renda {
-  background: var(--lar-cl); border-left: 5px solid var(--laranja);
-  border-radius: 0 var(--r2) var(--r2) 0; padding: 13px 16px; margin-top: 13px;
-}
-.dica-renda p { font-size: 15px; font-weight: 700; color: #7A4010; line-height: 1.6; }
-.dica-renda strong { color: var(--laranja); }
-.rpc-badge {
-  display: none; align-items: center; gap: 14px; margin-top: 13px;
-  padding: 14px 18px; border-radius: var(--r2); border: 3px solid var(--cinza2); background: var(--cinza);
-}
-.rpc-badge.ok   { background: var(--verde-cl); border-color: #90CCAA; }
-.rpc-badge.nao  { background: var(--verm-cl);  border-color: #E09090; }
-.rpc-badge.zero { background: var(--teal-cl);  border-color: #80C4B8; }
-.rpc-ico { font-size: 32px; flex-shrink: 0; }
-.rpc-rot { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--cinza3); margin-bottom: 2px; }
-.rpc-badge.ok   .rpc-rot { color: var(--verde); }
-.rpc-badge.nao  .rpc-rot { color: var(--verm); }
-.rpc-badge.zero .rpc-rot { color: var(--teal); }
-.rpc-val { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5vw, 28px); font-weight: 900; }
-.rpc-badge.ok   .rpc-val { color: var(--verde); }
-.rpc-badge.nao  .rpc-val { color: var(--verm); }
-.rpc-badge.zero .rpc-val { color: var(--teal); }
-.rpc-msg { font-size: 14px; font-weight: 700; margin-top: 2px; }
-.rpc-badge.ok   .rpc-msg { color: #1A6040; }
-.rpc-badge.nao  .rpc-msg { color: #901818; }
-.rpc-badge.zero .rpc-msg { color: var(--teal); }
+.input-renda-wrap input::-webkit-inner-spin-button{-webkit-appearance:none}
+.dica-renda{background:var(--lar-cl);border-left:5px solid var(--laranja);border-radius:0 var(--r2) var(--r2) 0;padding:13px 16px;margin-top:13px}
+.dica-renda p{font-size:15px;font-weight:700;color:#7A4010;line-height:1.6}
+.dica-renda strong{color:var(--laranja)}
+.rpc-badge{display:none;align-items:center;gap:14px;margin-top:13px;padding:14px 18px;border-radius:var(--r2);border:3px solid var(--cinza2);background:var(--cinza)}
+.rpc-badge.ok{background:var(--verde-cl);border-color:#90CCAA}
+.rpc-badge.nao{background:var(--verm-cl);border-color:#E09090}
+.rpc-badge.zero{background:var(--teal-cl);border-color:#80C4B8}
+.rpc-ico{font-size:32px;flex-shrink:0}
+.rpc-rot{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:var(--cinza3);margin-bottom:2px}
+.rpc-badge.ok .rpc-rot{color:var(--verde)}
+.rpc-badge.nao .rpc-rot{color:var(--verm)}
+.rpc-badge.zero .rpc-rot{color:var(--teal)}
+.rpc-val{font-family:'Nunito',sans-serif;font-size:clamp(20px,5vw,28px);font-weight:900}
+.rpc-badge.ok .rpc-val{color:var(--verde)}
+.rpc-badge.nao .rpc-val{color:var(--verm)}
+.rpc-badge.zero .rpc-val{color:var(--teal)}
+.rpc-msg{font-size:14px;font-weight:700;margin-top:2px}
+.rpc-badge.ok .rpc-msg{color:#1A6040}
+.rpc-badge.nao .rpc-msg{color:#901818}
+.rpc-badge.zero .rpc-msg{color:var(--teal)}
 
-/* Membro destaque (total família) */
-.membro-destaque {
-  display: flex; align-items: center; gap: 14px; padding: 18px 18px;
-  background: var(--azul-cl); border: 3px solid var(--azul);
-  border-radius: var(--r2); margin-bottom: 16px;
-}
-.membro-destaque .mem-nome { color: var(--azul-esc); font-size: clamp(16px, 4vw, 20px); }
-.membro-destaque .mem-valor { color: #3A5A9A; font-size: 14px; }
-.membro-destaque .ctr-num { color: var(--azul); }
+/* MEMBROS — layout compacto em linha única */
+.membro{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--cinza);border:3px solid var(--cinza2);border-radius:var(--r2);margin-bottom:10px;transition:background .2s,border-color .2s}
+.membro.destaque{background:var(--azul-cl);border-color:var(--azul)}
+.membro.ativo{background:var(--verde-cl);border-color:#80C898}
+.membro.sub{background:#FFF8F0;border:2px dashed #E8B080;margin-left:18px;padding:12px 16px}
+.membro.sub.ativo{background:#FFF0E0;border-color:var(--laranja);border-style:solid}
+.mem-emoji{font-size:32px;flex-shrink:0;line-height:1;width:40px;text-align:center}
+.mem-info{flex:1;min-width:0}
+.mem-nome{font-family:'Nunito',sans-serif;font-size:clamp(14px,3.5vw,17px);font-weight:900;color:var(--texto);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.membro.destaque .mem-nome{color:var(--azul-esc)}
+.membro.sub .mem-nome{font-size:clamp(13px,3vw,15px);color:#7A4010}
+.mem-sub{font-size:12px;font-weight:700;color:var(--cinza3);margin-top:1px}
+.membro.destaque .mem-sub{color:#3A5A9A}
+.membro.ativo .mem-sub{color:var(--verde)}
+.membro.sub .mem-sub{color:#A06020}
+.ctr{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.ctr-btn{width:44px;height:44px;border-radius:50%;border:3px solid var(--azul);background:var(--branco);color:var(--azul);font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1;box-shadow:0 2px 8px rgba(17,85,187,0.15);-webkit-tap-highlight-color:transparent}
+.ctr-btn:hover,.ctr-btn:active{background:var(--azul);color:#FFF;transform:scale(1.1)}
+.membro.sub .ctr-btn{border-color:var(--laranja);width:40px;height:40px;font-size:24px}
+.membro.sub .ctr-btn:hover,.membro.sub .ctr-btn:active{background:var(--laranja)}
+.ctr-num{min-width:34px;text-align:center;font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;color:var(--texto)}
+.membro.destaque .ctr-num{color:var(--azul)}
+.membro.ativo .ctr-num{color:var(--verde)}
+.membro.sub .ctr-num{font-size:24px;color:var(--laranja)}
 
-.membro {
-  display: flex; align-items: center; gap: 14px; padding: 16px 18px;
-  background: var(--cinza); border: 3px solid var(--cinza2);
-  border-radius: var(--r2); margin-bottom: 12px; transition: background .2s, border-color .2s;
-}
-.membro:last-of-type { margin-bottom: 0; }
-.membro.ativo { background: var(--verde-cl); border-color: #80C898; }
+/* Separador subcampo */
+.sep-sub{display:flex;align-items:center;gap:8px;margin:4px 0 4px 18px}
+.sep-sub-linha{flex:1;height:1px;background:#E8B080}
+.sep-sub-txt{font-size:11px;font-weight:900;color:var(--laranja);text-transform:uppercase;letter-spacing:0.8px;white-space:nowrap}
 
-/* Gestante como subcampo */
-.membro-sub {
-  display: flex; align-items: center; gap: 14px; padding: 14px 18px;
-  background: #FFF8F0; border: 2px dashed #E8B080;
-  border-radius: var(--r2); margin-bottom: 12px; margin-left: 20px;
-  transition: background .2s, border-color .2s;
-}
-.membro-sub.ativo { background: #FFF0E0; border-color: var(--laranja); border-style: solid; }
-.membro-sub .mem-nome { font-size: clamp(14px, 3.5vw, 17px); }
-.membro-sub .mem-valor { font-size: 13px; }
-.membro-sub .ctr-btn { width: 42px; height: 42px; font-size: 26px; }
-.membro-sub .ctr-num { font-size: 26px; min-width: 32px; }
-.membro-sub.ativo .ctr-num { color: var(--laranja); }
+.aviso-gest{display:none;margin:4px 0 8px 18px;padding:9px 14px;background:var(--verm-cl);border:2px solid #E09090;border-radius:10px;font-size:13px;font-weight:800;color:#901818}
 
-.mem-emoji { font-size: 38px; flex-shrink: 0; line-height: 1; }
-.mem-sub-emoji { font-size: 30px; flex-shrink: 0; line-height: 1; }
-.mem-info  { flex: 1; min-width: 0; }
-.mem-nome  { font-family: 'Nunito', sans-serif; font-size: clamp(15px, 3.8vw, 19px); font-weight: 900; color: var(--texto); line-height: 1.2; }
-.mem-valor { font-size: 14px; font-weight: 800; color: var(--cinza3); margin-top: 3px; }
-.membro.ativo .mem-valor { color: var(--verde); }
-.ctr { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.ctr-btn {
-  width: 50px; height: 50px; border-radius: 50%; border: 3px solid var(--azul);
-  background: var(--branco); color: var(--azul); font-family: 'Nunito', sans-serif;
-  font-size: 30px; font-weight: 900; cursor: pointer; user-select: none;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .15s; line-height: 1; box-shadow: 0 2px 8px rgba(17,85,187,0.15);
-  -webkit-tap-highlight-color: transparent;
-}
-.ctr-btn:hover, .ctr-btn:active { background: var(--azul); color: #FFF; transform: scale(1.1); }
-.ctr-num { min-width: 38px; text-align: center; font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 900; }
-.membro-destaque .ctr-btn { border-color: var(--azul-esc); }
-.membro-destaque .ctr-btn:hover { background: var(--azul-esc); }
-.membro-sub .ctr-btn { border-color: var(--laranja); }
-.membro-sub .ctr-btn:hover { background: var(--laranja); }
+.total-casa{display:flex;align-items:center;justify-content:space-between;background:var(--azul);color:#FFF;border-radius:var(--r2);padding:14px 20px;margin-top:14px}
+.tc-label{font-size:clamp(14px,3vw,17px);font-weight:800;display:flex;align-items:center;gap:8px}
+.tc-num{font-family:'Nunito',sans-serif;font-size:36px;font-weight:900}
 
-/* Separador de subgrupo */
-.sep-subgrupo {
-  display: flex; align-items: center; gap: 8px;
-  margin: 4px 0 6px 20px;
-}
-.sep-subgrupo-linha { flex: 1; height: 1px; background: #E8B080; }
-.sep-subgrupo-txt {
-  font-size: 11px; font-weight: 900; color: var(--laranja);
-  text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap;
-}
-
-.aviso-gestante-erro {
-  display: none; margin: -6px 0 12px 20px; padding: 10px 16px;
-  background: #FDEAEA; border: 2px solid #E09090; border-radius: 12px;
-  font-size: 13px; font-weight: 800; color: #901818;
-}
-
-.total-casa {
-  display: flex; align-items: center; justify-content: space-between;
-  background: var(--azul); color: #FFF; border-radius: var(--r2); padding: 16px 20px; margin-top: 16px;
-}
-.tc-label { font-size: clamp(14px, 3vw, 17px); font-weight: 800; display: flex; align-items: center; gap: 8px; }
-.tc-num   { font-family: 'Nunito', sans-serif; font-size: 36px; font-weight: 900; }
-.banner {
-  border-radius: var(--r); padding: 22px; margin-bottom: 18px;
-  display: flex; align-items: flex-start; gap: 16px; box-shadow: var(--sombra2);
-}
-.banner.ok     { background: linear-gradient(135deg, #1A7A4A, #28A860); }
-.banner.nao    { background: linear-gradient(135deg, #901818, #C02020); }
-.banner.espera { background: linear-gradient(135deg, #555, #888); }
-.ban-ico { font-size: 48px; flex-shrink: 0; filter: drop-shadow(0 2px 5px rgba(0,0,0,.3)); }
-.ban-titulo { font-family: 'Nunito', sans-serif; font-size: clamp(18px, 4.5vw, 26px); font-weight: 900; color: #FFF; line-height: 1.2; margin-bottom: 6px; }
-.ban-desc { font-size: clamp(14px, 3vw, 16px); font-weight: 700; color: rgba(255,255,255,0.92); line-height: 1.55; }
-.ban-desc strong { color: #FFF; }
-.card-comp { background: var(--branco); border: 3px solid var(--verde-md); border-radius: var(--r); overflow: hidden; box-shadow: var(--sombra2); margin-bottom: 18px; }
-.comp-cab { background: var(--verde); padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-.comp-cab-titulo { font-family: 'Nunito', sans-serif; font-size: clamp(16px, 4vw, 20px); font-weight: 900; color: #FFF; display: flex; align-items: center; gap: 8px; }
-.comp-cab-tag { background: rgba(255,255,255,0.22); border: 2px solid rgba(255,255,255,0.35); color: #FFF; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 900; padding: 5px 14px; border-radius: 30px; white-space: nowrap; }
-.linha { display: flex; align-items: center; gap: 14px; padding: 16px 22px; border-bottom: 2px solid var(--cinza); transition: background .15s; }
-.linha:hover { background: var(--cinza); }
-.linha-ico { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
-.linha-centro { flex: 1; min-width: 0; }
-.linha-nome { font-family: 'Nunito', sans-serif; font-size: clamp(14px, 3.5vw, 18px); font-weight: 900; color: var(--texto); line-height: 1.2; }
-.linha-desc { font-size: clamp(12px, 2.8vw, 15px); font-weight: 700; color: #666; margin-top: 3px; }
-.linha-valor { font-family: 'Nunito', sans-serif; font-size: clamp(20px, 5vw, 28px); font-weight: 900; color: var(--verde); white-space: nowrap; text-align: right; }
-.linha-valor.comp-cor { color: var(--teal); }
-.subtotal-linha { display: flex; align-items: center; justify-content: space-between; padding: 10px 22px; background: #F8FCF9; border-bottom: 2px solid var(--cinza2); }
-.subtotal-txt { font-size: 14px; font-weight: 800; color: #666; }
-.subtotal-val { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 900; color: #888; }
-.sep-variavel { display: flex; align-items: center; gap: 0; background: var(--cinza); border-bottom: 2px solid var(--cinza2); padding: 0 22px; }
-.sep-linha { flex: 1; height: 2px; background: var(--verde-md); }
-.sep-txt { font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 900; color: var(--verde); padding: 8px 12px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
-.total-grande { background: linear-gradient(135deg, var(--verde), #28A860); padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.tg-label { font-family: 'Nunito', sans-serif; font-size: clamp(16px, 4vw, 22px); font-weight: 900; color: #FFF; display: flex; align-items: center; gap: 8px; }
-.tg-nota { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.82); margin-top: 4px; }
-.tg-valor { font-family: 'Nunito', sans-serif; font-size: clamp(36px, 9vw, 56px); font-weight: 900; color: #FFF; text-shadow: 0 3px 12px rgba(0,0,0,.25); white-space: nowrap; }
-.barra-visual { background: var(--branco); border-radius: var(--r); padding: 20px 22px; box-shadow: var(--sombra); margin-bottom: 18px; }
-.bv-titulo { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 900; color: var(--texto); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-.bv-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-.bv-row:last-child { margin-bottom: 0; }
-.bv-ico { font-size: 22px; flex-shrink: 0; }
-.bv-label { font-size: 13px; font-weight: 800; color: #444; width: 95px; flex-shrink: 0; line-height: 1.2; }
-.bv-track { flex: 1; height: 30px; background: var(--cinza2); border-radius: 15px; overflow: hidden; }
-.bv-fill { height: 100%; border-radius: 15px; display: flex; align-items: center; padding-left: 12px; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 900; color: #FFF; white-space: nowrap; overflow: hidden; transition: width .7s cubic-bezier(.4,0,.2,1); min-width: 6px; }
-.bv-pct { font-size: 14px; font-weight: 900; color: #555; width: 40px; text-align: right; flex-shrink: 0; }
-.cond-bloco { background: var(--branco); border-radius: var(--r); padding: 20px 22px; box-shadow: var(--sombra); margin-bottom: 18px; }
-.cond-titulo { font-family: 'Nunito', sans-serif; font-size: 19px; font-weight: 900; color: var(--texto); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-.cond-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; background: var(--cinza); border-left: 5px solid var(--azul); border-radius: 0 var(--r2) var(--r2) 0; margin-bottom: 10px; }
-.cond-item:last-child { margin-bottom: 0; }
-.cond-ico { font-size: 26px; flex-shrink: 0; margin-top: 1px; }
-.cond-txt { font-size: clamp(14px, 3vw, 16px); font-weight: 700; color: var(--texto); line-height: 1.6; }
-.cond-txt strong { color: var(--azul); }
-.aviso { background: var(--lar-cl); border: 3px solid var(--laranja); border-radius: var(--r2); padding: 16px 18px; display: flex; gap: 12px; align-items: flex-start; }
-.aviso-ico { font-size: 28px; flex-shrink: 0; }
-.aviso-txt { font-size: 15px; font-weight: 700; color: #7A3C08; line-height: 1.65; }
-.aviso-txt strong { color: var(--laranja); font-size: 16px; }
-#estado-vazio { text-align: center; padding: 36px 20px; }
-.ev-ico   { font-size: 60px; display: block; margin-bottom: 12px; }
-.ev-titulo { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 900; color: var(--cinza3); margin-bottom: 8px; }
-.ev-desc  { font-size: 16px; font-weight: 700; color: var(--cinza3); }
-.aparecer { animation: ap .35s ease both; }
-@keyframes ap { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-@media (max-width: 480px) {
-  .bloco-corpo { padding: 16px 14px; }
-  .linha { padding: 14px 14px; }
-  .comp-cab, .total-grande { padding: 14px 14px; }
-  .bv-label { width: 75px; }
-  .membro-sub { margin-left: 10px; }
-  .sep-subgrupo { margin-left: 10px; }
+/* RESULTADO */
+.banner{border-radius:var(--r);padding:22px;margin-bottom:18px;display:flex;align-items:flex-start;gap:16px;box-shadow:var(--sombra2)}
+.banner.ok{background:linear-gradient(135deg,#1A7A4A,#28A860)}
+.banner.nao{background:linear-gradient(135deg,#901818,#C02020)}
+.banner.espera{background:linear-gradient(135deg,#555,#888)}
+.ban-ico{font-size:48px;flex-shrink:0;filter:drop-shadow(0 2px 5px rgba(0,0,0,.3))}
+.ban-titulo{font-family:'Nunito',sans-serif;font-size:clamp(18px,4.5vw,26px);font-weight:900;color:#FFF;line-height:1.2;margin-bottom:6px}
+.ban-desc{font-size:clamp(14px,3vw,16px);font-weight:700;color:rgba(255,255,255,0.92);line-height:1.55}
+.ban-desc strong{color:#FFF}
+.card-comp{background:var(--branco);border:3px solid var(--verde-md);border-radius:var(--r);overflow:hidden;box-shadow:var(--sombra2);margin-bottom:18px}
+.comp-cab{background:var(--verde);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.comp-cab-titulo{font-family:'Nunito',sans-serif;font-size:clamp(16px,4vw,20px);font-weight:900;color:#FFF;display:flex;align-items:center;gap:8px}
+.comp-cab-tag{background:rgba(255,255,255,0.22);border:2px solid rgba(255,255,255,0.35);color:#FFF;font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;padding:5px 14px;border-radius:30px;white-space:nowrap}
+.linha{display:flex;align-items:center;gap:14px;padding:16px 22px;border-bottom:2px solid var(--cinza);transition:background .15s}
+.linha:hover{background:var(--cinza)}
+.linha-ico{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.linha-centro{flex:1;min-width:0}
+.linha-nome{font-family:'Nunito',sans-serif;font-size:clamp(14px,3.5vw,18px);font-weight:900;color:var(--texto);line-height:1.2}
+.linha-desc{font-size:clamp(12px,2.8vw,15px);font-weight:700;color:#666;margin-top:3px}
+.linha-valor{font-family:'Nunito',sans-serif;font-size:clamp(20px,5vw,28px);font-weight:900;color:var(--verde);white-space:nowrap;text-align:right}
+.linha-valor.comp-cor{color:var(--teal)}
+.subtotal-linha{display:flex;align-items:center;justify-content:space-between;padding:10px 22px;background:#F8FCF9;border-bottom:2px solid var(--cinza2)}
+.subtotal-txt{font-size:14px;font-weight:800;color:#666}
+.subtotal-val{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:#888}
+.sep-variavel{display:flex;align-items:center;gap:0;background:var(--cinza);border-bottom:2px solid var(--cinza2);padding:0 22px}
+.sep-linha{flex:1;height:2px;background:var(--verde-md)}
+.sep-txt{font-family:'Nunito',sans-serif;font-size:12px;font-weight:900;color:var(--verde);padding:8px 12px;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap}
+.total-grande{background:linear-gradient(135deg,var(--verde),#28A860);padding:22px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.tg-label{font-family:'Nunito',sans-serif;font-size:clamp(16px,4vw,22px);font-weight:900;color:#FFF;display:flex;align-items:center;gap:8px}
+.tg-nota{font-size:13px;font-weight:700;color:rgba(255,255,255,0.82);margin-top:4px}
+.tg-valor{font-family:'Nunito',sans-serif;font-size:clamp(36px,9vw,56px);font-weight:900;color:#FFF;text-shadow:0 3px 12px rgba(0,0,0,.25);white-space:nowrap}
+.barra-visual{background:var(--branco);border-radius:var(--r);padding:20px 22px;box-shadow:var(--sombra);margin-bottom:18px}
+.bv-titulo{font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;color:var(--texto);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.bv-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bv-row:last-child{margin-bottom:0}
+.bv-ico{font-size:22px;flex-shrink:0}
+.bv-label{font-size:13px;font-weight:800;color:#444;width:95px;flex-shrink:0;line-height:1.2}
+.bv-track{flex:1;height:30px;background:var(--cinza2);border-radius:15px;overflow:hidden}
+.bv-fill{height:100%;border-radius:15px;display:flex;align-items:center;padding-left:12px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:900;color:#FFF;white-space:nowrap;overflow:hidden;transition:width .7s cubic-bezier(.4,0,.2,1);min-width:6px}
+.bv-pct{font-size:14px;font-weight:900;color:#555;width:40px;text-align:right;flex-shrink:0}
+.cond-bloco{background:var(--branco);border-radius:var(--r);padding:20px 22px;box-shadow:var(--sombra);margin-bottom:18px}
+.cond-titulo{font-family:'Nunito',sans-serif;font-size:19px;font-weight:900;color:var(--texto);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.cond-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:var(--cinza);border-left:5px solid var(--azul);border-radius:0 var(--r2) var(--r2) 0;margin-bottom:10px}
+.cond-item:last-child{margin-bottom:0}
+.cond-ico{font-size:26px;flex-shrink:0;margin-top:1px}
+.cond-txt{font-size:clamp(14px,3vw,16px);font-weight:700;color:var(--texto);line-height:1.6}
+.cond-txt strong{color:var(--azul)}
+.aviso{background:var(--lar-cl);border:3px solid var(--laranja);border-radius:var(--r2);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.aviso-ico{font-size:28px;flex-shrink:0}
+.aviso-txt{font-size:15px;font-weight:700;color:#7A3C08;line-height:1.65}
+.aviso-txt strong{color:var(--laranja);font-size:16px}
+#estado-vazio{text-align:center;padding:36px 20px}
+.ev-ico{font-size:60px;display:block;margin-bottom:12px}
+.ev-titulo{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:var(--cinza3);margin-bottom:8px}
+.ev-desc{font-size:16px;font-weight:700;color:var(--cinza3)}
+.aparecer{animation:ap .35s ease both}
+@keyframes ap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:480px){
+  .bloco-corpo{padding:16px 14px}
+  .linha{padding:14px 14px}
+  .comp-cab,.total-grande{padding:14px 14px}
+  .bv-label{width:75px}
+  .membro.sub{margin-left:10px}
+  .sep-sub{margin-left:10px}
+  .aviso-gest{margin-left:10px}
 }
 </style>
 </head>
@@ -371,7 +246,7 @@ body {
 
 <div class="pg">
 
-  <!-- PASSO 1: RENDA -->
+  <!-- PASSO 1 -->
   <div class="bloco">
     <div class="bloco-cab azul">
       <div class="num-passo azul">1</div>
@@ -396,8 +271,7 @@ body {
       <div class="label-campo">&#128176; INFORME A RENDA MENSAL TOTAL:</div>
       <div class="input-renda-wrap" id="wrap-renda">
         <div class="input-rs">R$</div>
-        <input type="number" id="renda" placeholder="0" min="0" step="50"
-               inputmode="numeric" oninput="onRendaDigitou()">
+        <input type="number" id="renda" placeholder="0" min="0" step="50" inputmode="numeric" oninput="onRendaDigitou()">
       </div>
       <div class="dica-renda">
         <p>&#128204; <strong>O QUE INCLUIR?</strong> SALÁRIO, APOSENTADORIA, PENSÃO, BICO, TRABALHO INFORMAL — <strong>TUDO QUE ENTRA NA CASA POR MÊS.</strong></p>
@@ -413,7 +287,7 @@ body {
     </div>
   </div>
 
-  <!-- PASSO 2: FAMÍLIA -->
+  <!-- PASSO 2 -->
   <div class="bloco">
     <div class="bloco-cab azul">
       <div class="num-passo azul">2</div>
@@ -424,12 +298,12 @@ body {
     </div>
     <div class="bloco-corpo">
 
-      <!-- TOTAL DE PESSOAS — base do BRC -->
-      <div class="membro-destaque" id="mem-adulto">
+      <!-- Total de pessoas — base BRC -->
+      <div class="membro destaque" id="mem-adulto">
         <div class="mem-emoji">&#128106;</div>
         <div class="mem-info">
           <div class="mem-nome">TOTAL DE PESSOAS DA FAMÍLIA</div>
-          <div class="mem-valor">BASE DO BRC: R$ 142 POR PESSOA &nbsp;&#8226;&nbsp; INCLUA TODOS OS MEMBROS DO GRUPO FAMILIAR</div>
+          <div class="mem-sub">BASE DO BRC &nbsp;&#8226;&nbsp; R$ 142 POR PESSOA</div>
         </div>
         <div class="ctr">
           <button class="ctr-btn" onclick="alterar('adulto',-1)">&#8722;</button>
@@ -438,17 +312,17 @@ body {
         </div>
       </div>
 
-      <!-- GESTANTE — subcampo do total -->
-      <div class="sep-subgrupo">
-        <div class="sep-subgrupo-linha"></div>
-        <div class="sep-subgrupo-txt">&#8627; DAS PESSOAS ACIMA, QUANTAS SÃO GESTANTES?</div>
-        <div class="sep-subgrupo-linha"></div>
+      <!-- Gestante — subcampo -->
+      <div class="sep-sub">
+        <div class="sep-sub-linha"></div>
+        <div class="sep-sub-txt">&#8627; QUANTAS SÃO GESTANTES?</div>
+        <div class="sep-sub-linha"></div>
       </div>
-      <div class="membro-sub" id="mem-gestante">
-        <div class="mem-sub-emoji">&#129328;</div>
+      <div class="membro sub" id="mem-gestante">
+        <div class="mem-emoji">&#129328;</div>
         <div class="mem-info">
-          <div class="mem-nome">GESTANTES <span style="font-size:12px;font-weight:700;color:#A06020">(JÁ INCLUÍDAS NO TOTAL)</span></div>
-          <div class="mem-valor">RECEBEM BVF DE R$ 50 CADA &nbsp;&#8226;&nbsp; NÃO DUPLICA O TOTAL DE PESSOAS</div>
+          <div class="mem-nome">GESTANTES &nbsp;<span style="font-size:11px;font-weight:700;opacity:.8">(JÁ NO TOTAL)</span></div>
+          <div class="mem-sub">BVF DE R$ 50 CADA</div>
         </div>
         <div class="ctr">
           <button class="ctr-btn" onclick="alterar('gestante',-1)">&#8722;</button>
@@ -456,16 +330,14 @@ body {
           <button class="ctr-btn" onclick="alterar('gestante',1)">+</button>
         </div>
       </div>
-      <div class="aviso-gestante-erro" id="aviso-gestante">
-        &#9888; O NÚMERO DE GESTANTES NÃO PODE SER MAIOR QUE O TOTAL DE PESSOAS. AJUSTE OS VALORES.
-      </div>
+      <div class="aviso-gest" id="aviso-gestante">&#9888; GESTANTES NÃO PODEM SER MAIOR QUE O TOTAL. AJUSTE OS VALORES.</div>
 
-      <!-- CRIANÇAS 0–6 -->
+      <!-- Crianças 0–6 -->
       <div class="membro" id="mem-crianca6">
         <div class="mem-emoji">&#127868;</div>
         <div class="mem-info">
           <div class="mem-nome">CRIANÇAS DE 0 A 6 ANOS</div>
-          <div class="mem-valor">R$ 150 EXTRA (BPI) ALÉM DO BRC &nbsp;&#8226;&nbsp; JÁ INCLUÍDAS NO TOTAL DE PESSOAS</div>
+          <div class="mem-sub">BPI DE R$ 150 CADA</div>
         </div>
         <div class="ctr">
           <button class="ctr-btn" onclick="alterar('crianca6',-1)">&#8722;</button>
@@ -474,12 +346,12 @@ body {
         </div>
       </div>
 
-      <!-- JOVENS 7–17 -->
+      <!-- Jovens 7–17 -->
       <div class="membro" id="mem-adolescente">
         <div class="mem-emoji">&#127890;</div>
         <div class="mem-info">
-          <div class="mem-nome">CRIANÇAS E JOVENS 7 A 17 ANOS</div>
-          <div class="mem-valor">R$ 50 EXTRA (BVF) ALÉM DO BRC &nbsp;&#8226;&nbsp; JÁ INCLUÍDOS NO TOTAL DE PESSOAS</div>
+          <div class="mem-nome">JOVENS DE 7 A 17 ANOS</div>
+          <div class="mem-sub">BVF DE R$ 50 CADA</div>
         </div>
         <div class="ctr">
           <button class="ctr-btn" onclick="alterar('adolescente',-1)">&#8722;</button>
@@ -495,7 +367,7 @@ body {
     </div>
   </div>
 
-  <!-- PASSO 3: RESULTADO -->
+  <!-- PASSO 3 -->
   <div class="bloco bloco-resultado">
     <div class="bloco-cab verde">
       <div class="num-passo verde">3</div>
@@ -515,7 +387,7 @@ body {
           <div class="ban-ico" id="ban-ico">&#128203;</div>
           <div>
             <div class="ban-titulo" id="ban-titulo">—</div>
-            <div class="ban-desc"   id="ban-desc">—</div>
+            <div class="ban-desc" id="ban-desc">—</div>
           </div>
         </div>
         <div id="area-detalhe" style="display:none">
@@ -557,201 +429,121 @@ body {
 </div>
 
 <script>
-const BRC_UNIT = 142, BPI_UNIT = 150, BVF_UNIT = 50, MINIMO = 600, LIM_RPC = 218;
-// fam.adulto = TOTAL de pessoas da família (base do BRC)
-// fam.gestante = quantas do total são gestantes (subcampo para BVF, não duplica)
-// fam.crianca6 e fam.adolescente = para BPI/BVF (já incluídos no total adulto)
-const fam = { adulto:1, crianca6:0, adolescente:0, gestante:0 };
-let semRenda = false;
+var BRC=142,BPI=150,BVF=50,MIN=600,LIM=218;
+var fam={adulto:1,crianca6:0,adolescente:0,gestante:0};
+var semRenda=false;
+var totalP=function(){return fam.adulto;};
+var fmt=function(v){return v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});};
+var fmtR=function(v){return 'R$ '+fmt(v);};
+var el=function(id){return document.getElementById(id);};
 
-// Total de pessoas = fam.adulto (já inclui todos — gestantes, crianças, jovens estão dentro)
-// Crianças e jovens são subcampos para os benefícios variáveis
-const totalP = () => fam.adulto;
-const fmt    = v => v.toLocaleString('pt-BR', { minimumFractionDigits:2, maximumFractionDigits:2 });
-const fmtR   = v => 'R$ ' + fmt(v);
-const el     = id => document.getElementById(id);
-
-function toggleSemRenda() {
-  semRenda = !semRenda;
-  const btn = el('btn-sem-renda'), chk = el('bsr-check'), wrap = el('wrap-renda'), inp = el('renda');
-  if (semRenda) {
-    btn.classList.add('marcado'); chk.textContent = '\u2713';
-    wrap.classList.add('bloqueado'); inp.value = ''; inp.disabled = true;
-  } else {
-    btn.classList.remove('marcado'); chk.textContent = '\u2634';
-    wrap.classList.remove('bloqueado'); inp.disabled = false;
-  }
+function toggleSemRenda(){
+  semRenda=!semRenda;
+  var btn=el('btn-sem-renda'),chk=el('bsr-check'),wrap=el('wrap-renda'),inp=el('renda');
+  if(semRenda){btn.classList.add('marcado');chk.textContent='\u2713';wrap.classList.add('bloqueado');inp.value='';inp.disabled=true;}
+  else{btn.classList.remove('marcado');chk.textContent='\u2634';wrap.classList.remove('bloqueado');inp.disabled=false;}
   calcular();
 }
 
-function onRendaDigitou() {
-  if (semRenda) {
-    semRenda = false;
-    el('btn-sem-renda').classList.remove('marcado');
-    el('bsr-check').textContent = '\u2634';
-    el('wrap-renda').classList.remove('bloqueado');
-    el('renda').disabled = false;
-  }
+function onRendaDigitou(){
+  if(semRenda){semRenda=false;el('btn-sem-renda').classList.remove('marcado');el('bsr-check').textContent='\u2634';el('wrap-renda').classList.remove('bloqueado');el('renda').disabled=false;}
   calcular();
 }
 
-function alterar(tipo, delta) {
-  fam[tipo] = Math.max(0, fam[tipo] + delta);
-  // Gestante não pode exceder o total de pessoas
-  if (tipo === 'gestante' && fam.gestante > fam.adulto) fam.gestante = fam.adulto;
-  // Se reduzir total, ajusta gestante automaticamente
-  if (tipo === 'adulto' && fam.gestante > fam.adulto) fam.gestante = fam.adulto;
-  // Crianças e jovens não podem exceder total de pessoas
-  if (fam.crianca6 + fam.adolescente + fam.gestante > fam.adulto) {
-    if (tipo === 'crianca6') fam.crianca6 = Math.max(0, fam.adulto - fam.adolescente - fam.gestante);
-    if (tipo === 'adolescente') fam.adolescente = Math.max(0, fam.adulto - fam.crianca6 - fam.gestante);
-  }
-  // Mínimo de 1 pessoa total
-  if (fam.adulto < 1) fam.adulto = 1;
-  // Atualiza displays
-  el('cnt-adulto').textContent = fam.adulto;
-  el('cnt-crianca6').textContent = fam.crianca6;
-  el('cnt-adolescente').textContent = fam.adolescente;
-  el('cnt-gestante').textContent = fam.gestante;
-  // Destaque visual
-  el('mem-crianca6').classList.toggle('ativo', fam.crianca6 > 0);
-  el('mem-adolescente').classList.toggle('ativo', fam.adolescente > 0);
-  el('mem-gestante').classList.toggle('ativo', fam.gestante > 0);
-  // Aviso gestante (segurança)
-  el('aviso-gestante').style.display = (fam.gestante > fam.adulto) ? 'block' : 'none';
+function alterar(tipo,delta){
+  fam[tipo]=Math.max(0,fam[tipo]+delta);
+  if(fam.adulto<1)fam.adulto=1;
+  if(fam.gestante>fam.adulto)fam.gestante=fam.adulto;
+  el('cnt-adulto').textContent=fam.adulto;
+  el('cnt-crianca6').textContent=fam.crianca6;
+  el('cnt-adolescente').textContent=fam.adolescente;
+  el('cnt-gestante').textContent=fam.gestante;
+  el('mem-crianca6').className='membro'+(fam.crianca6>0?' ativo':'');
+  el('mem-adolescente').className='membro'+(fam.adolescente>0?' ativo':'');
+  el('mem-gestante').className='membro sub'+(fam.gestante>0?' ativo':'');
+  el('aviso-gestante').style.display='none';
   calcular();
 }
 
-function calcular() {
-  const nPess = totalP();
-  el('total-pessoas').textContent = nPess;
-  const rendaDigitada = parseFloat(el('renda').value) || 0;
-  const renda = semRenda ? 0 : rendaDigitada;
-  const prontoParaCalcular = semRenda || rendaDigitada > 0;
-  const badge = el('rpc-badge');
-  if (prontoParaCalcular) {
-    badge.style.display = 'flex';
-    const rpc = nPess > 0 ? renda / nPess : 0;
-    if (semRenda) {
-      badge.className = 'rpc-badge zero';
-      el('rpc-ico').textContent = '\u2705';
-      el('rpc-val').textContent = 'R$ 0,00 — SEM RENDA';
-      el('rpc-msg').textContent = 'SEM RENDA DECLARADA — DENTRO DO LIMITE. PODE TER DIREITO!';
-    } else {
-      el('rpc-val').textContent = fmtR(rpc) + ' POR PESSOA';
-      if (rpc <= LIM_RPC) {
-        badge.className = 'rpc-badge ok';
-        el('rpc-ico').textContent = '\u2705';
-        el('rpc-msg').textContent = 'DENTRO DO LIMITE DE R$ 218,00 — PODE TER DIREITO!';
-      } else {
-        badge.className = 'rpc-badge nao';
-        el('rpc-ico').textContent = '\u274C';
-        el('rpc-msg').textContent = 'ACIMA DO LIMITE DE R$ 218,00 — SEM DIREITO AO BENEFÍCIO';
-      }
+function calcular(){
+  var nPess=totalP();
+  el('total-pessoas').textContent=nPess;
+  var rendaD=parseFloat(el('renda').value)||0;
+  var renda=semRenda?0:rendaD;
+  var pronto=semRenda||rendaD>0;
+  var badge=el('rpc-badge');
+  if(pronto){
+    badge.style.display='flex';
+    var rpc=nPess>0?renda/nPess:0;
+    if(semRenda){badge.className='rpc-badge zero';el('rpc-ico').textContent='\u2705';el('rpc-val').textContent='R$ 0,00 \u2014 SEM RENDA';el('rpc-msg').textContent='SEM RENDA DECLARADA \u2014 DENTRO DO LIMITE. PODE TER DIREITO!';}
+    else{
+      el('rpc-val').textContent=fmtR(rpc)+' POR PESSOA';
+      if(rpc<=LIM){badge.className='rpc-badge ok';el('rpc-ico').textContent='\u2705';el('rpc-msg').textContent='DENTRO DO LIMITE DE R$ 218,00 \u2014 PODE TER DIREITO!';}
+      else{badge.className='rpc-badge nao';el('rpc-ico').textContent='\u274C';el('rpc-msg').textContent='ACIMA DO LIMITE DE R$ 218,00 \u2014 SEM DIREITO AO BENE\u00DAFCIO';}
     }
-  } else {
-    badge.style.display = 'none';
-  }
-  if (!prontoParaCalcular) {
-    el('estado-vazio').style.display = 'block';
-    el('area-resultado').style.display = 'none';
+  }else{badge.style.display='none';}
+  if(!pronto){el('estado-vazio').style.display='block';el('area-resultado').style.display='none';return;}
+  el('estado-vazio').style.display='none';
+  el('area-resultado').style.display='block';
+  var rpc2=nPess>0?renda/nPess:0;
+  if(!semRenda&&rpc2>LIM){
+    el('banner').className='banner nao aparecer';
+    el('ban-ico').textContent='\u274C';
+    el('ban-titulo').textContent='SUA FAM\u00CDLIA N\u00C3O TEM DIREITO AO BENEF\u00CDCIO AGORA';
+    el('ban-desc').innerHTML='A RENDA POR PESSOA \u00C9 <strong>'+fmtR(rpc2)+'</strong>, ACIMA DO LIMITE DE <strong>R$ 218,00/PESSOA</strong>.<br>PARA <strong>'+nPess+' PESSOA(S)</strong>, A RENDA DEVERIA SER AT\u00C9 <strong>'+fmtR(LIM*nPess)+'</strong>.';
+    el('area-detalhe').style.display='none';
     return;
   }
-  el('estado-vazio').style.display = 'none';
-  el('area-resultado').style.display = 'block';
-  const rpc = nPess > 0 ? renda / nPess : 0;
-  if (!semRenda && rpc > LIM_RPC) {
-    el('banner').className = 'banner nao aparecer';
-    el('ban-ico').textContent = '\u274C';
-    el('ban-titulo').textContent = 'SUA FAMÍLIA NÃO TEM DIREITO AO BENEFÍCIO AGORA';
-    el('ban-desc').innerHTML = 'A RENDA POR PESSOA É <strong>' + fmtR(rpc) + '</strong>, ACIMA DO LIMITE DE <strong>R$ 218,00/PESSOA</strong>.<br>PARA <strong>' + nPess + ' PESSOA(S)</strong>, A RENDA TOTAL DEVERIA SER ATÉ <strong>' + fmtR(LIM_RPC * nPess) + '</strong>.';
-    el('area-detalhe').style.display = 'none';
-    return;
-  }
-  el('banner').className = 'banner ok aparecer';
-  el('ban-ico').textContent = '\uD83C\uDF89';
-  el('ban-titulo').textContent = semRenda ? 'SEM RENDA — SUA FAMÍLIA PODE TER DIREITO AO BOLSA FAMÍLIA!' : 'SUA FAMÍLIA PODE TER DIREITO AO BOLSA FAMÍLIA!';
-  el('ban-desc').innerHTML = semRenda
-    ? 'FAMÍLIA SEM RENDA DECLARADA — DENTRO DO CRITÉRIO DE ELEGIBILIDADE.<br>VEJA ABAIXO O VALOR ESTIMADO DO BENEFÍCIO.'
-    : 'RENDA POR PESSOA: <strong>' + fmtR(rpc) + '</strong> — DENTRO DO LIMITE DE R$ 218,00.<br>VEJA ABAIXO O VALOR ESTIMADO DO BENEFÍCIO.';
-  el('area-detalhe').style.display = 'block';
+  el('banner').className='banner ok aparecer';
+  el('ban-ico').textContent='\uD83C\uDF89';
+  el('ban-titulo').textContent=semRenda?'SEM RENDA \u2014 SUA FAM\u00CDLIA PODE TER DIREITO AO BOLSA FAM\u00CDLIA!':'SUA FAM\u00CDLIA PODE TER DIREITO AO BOLSA FAM\u00CDLIA!';
+  el('ban-desc').innerHTML=semRenda?'FAM\u00CDLIA SEM RENDA DECLARADA \u2014 DENTRO DO CRIT\u00C9RIO DE ELEGIBILIDADE.<br>VEJA ABAIXO O VALOR ESTIMADO DO BENEF\u00CDCIO.':'RENDA POR PESSOA: <strong>'+fmtR(rpc2)+'</strong> \u2014 DENTRO DO LIMITE DE R$ 218,00.<br>VEJA ABAIXO O VALOR ESTIMADO DO BENEF\u00CDCIO.';
+  el('area-detalhe').style.display='block';
 
-  // ── CÁLCULO ──
-  // BRC = R$142 × total de pessoas da família
-  // COMP = se BRC < R$600, completa até R$600
-  // BPI  = R$150 × crianças 0–6 (benefício extra, não duplica no BRC)
-  // BVF  = R$50  × (jovens 7–17 + gestantes)
-  const valBRC  = nPess * BRC_UNIT;
-  const valCOMP = valBRC < MINIMO ? MINIMO - valBRC : 0;
-  const valBPI  = fam.crianca6 * BPI_UNIT;
-  const nBVF    = fam.adolescente + fam.gestante;
-  const valBVF  = nBVF * BVF_UNIT;
-  const total   = valBRC + valCOMP + valBPI + valBVF;
+  var vBRC=nPess*BRC;
+  var vCOMP=vBRC<MIN?MIN-vBRC:0;
+  var vBPI=fam.crianca6*BPI;
+  var nBVF=fam.adolescente+fam.gestante;
+  var vBVF=nBVF*BVF;
+  var total=vBRC+vCOMP+vBPI+vBVF;
 
-  let html = '';
-  html += linhaHTML('\uD83C\uDFE0','#E8F0FB','RENDA DE CIDADANIA (BRC)',
-    'R$ 142 × ' + nPess + ' PESSOA(S) DO GRUPO FAMILIAR', valBRC, '');
+  var h='';
+  h+=lH('\uD83C\uDFE0','#E8F0FB','RENDA DE CIDADANIA (BRC)','R$ 142 \u00D7 '+nPess+' PESSOA(S) DO GRUPO FAMILIAR',vBRC,'');
+  if(vCOMP>0){h+='<div class="subtotal-linha"><span class="subtotal-txt">BRC ('+fmtR(vBRC)+') \u00C9 MENOR QUE R$ 600,00</span><span class="subtotal-val">\u2193 COMPLETA</span></div>';h+=lH('\u2795','#E3F4F1','BENEF\u00CDCIO COMPLEMENTAR','COMPLETA OS '+fmtR(vBRC)+' AT\u00C9 O M\u00CDNIMO DE R$ 600,00',vCOMP,'comp-cor');}
+  if(vBPI>0||vBVF>0){h+='<div class="sep-variavel"><div class="sep-linha"></div><div class="sep-txt">\u271A MAIS BENEF\u00CDCIOS VARI\u00C1VEIS</div><div class="sep-linha"></div></div>';}
+  if(vBPI>0)h+=lH('\uD83C\uDF7C','#E6F5EE','BENEF\u00CDCIO PRIMEIRA INF\u00C2NCIA (BPI)','R$ 150 \u00D7 '+fam.crianca6+' CRIAN\u00C7A(S) DE 0 A 6 ANOS',vBPI,'');
+  if(vBVF>0){var p=[];if(fam.adolescente>0)p.push(fam.adolescente+' JOVEM(NS) 7\u201317 ANOS');if(fam.gestante>0)p.push(fam.gestante+' GESTANTE(S)');h+=lH('\uD83C\uDF92','#FEF0E0','BENEF\u00CDCIO VARI\u00C1VEL FAMILIAR (BVF)','R$ 50 \u00D7 '+p.join(' + '),vBVF,'');}
+  el('linhas').innerHTML=h;
+  el('tg-valor').textContent=fmtR(total);
+  el('comp-tag').textContent=fmtR(total);
+  var nota='';
+  if(vCOMP>0&&(vBPI>0||vBVF>0))nota='M\u00CDNIMO GARANTIDO (R$ 600,00) + BENEF\u00CDCIOS VARI\u00C1VEIS';
+  else if(vCOMP>0)nota='BRC + COMPLEMENTAR = M\u00CDNIMO GARANTIDO DE R$ 600,00';
+  else nota='BRC ULTRAPASSA R$ 600,00 \u2014 SEM NECESSIDADE DE COMPLEMENTAR';
+  el('tg-nota').textContent=nota;
 
-  if (valCOMP > 0) {
-    html += '<div class="subtotal-linha"><span class="subtotal-txt">BRC (' + fmtR(valBRC) + ') É MENOR QUE R$ 600,00</span><span class="subtotal-val">&#8595; COMPLETA</span></div>';
-    html += linhaHTML('\u2795','#E3F4F1','BENEFÍCIO COMPLEMENTAR',
-      'COMPLETA OS ' + fmtR(valBRC) + ' ATÉ O MÍNIMO DE R$ 600,00', valCOMP, 'comp-cor');
-  }
-  if (valBPI > 0 || valBVF > 0) {
-    html += '<div class="sep-variavel"><div class="sep-linha"></div><div class="sep-txt">&#10010; MAIS BENEFÍCIOS VARIÁVEIS</div><div class="sep-linha"></div></div>';
-  }
-  if (valBPI > 0) {
-    html += linhaHTML('\uD83C\uDF7C','#E6F5EE','BENEFÍCIO PRIMEIRA INFÂNCIA (BPI)',
-      'R$ 150 × ' + fam.crianca6 + ' CRIANÇA(S) DE 0 A 6 ANOS', valBPI, '');
-  }
-  if (valBVF > 0) {
-    const partes = [];
-    if (fam.adolescente > 0) partes.push(fam.adolescente + ' JOVEM(NS) 7–17 ANOS');
-    if (fam.gestante    > 0) partes.push(fam.gestante + ' GESTANTE(S)');
-    html += linhaHTML('\uD83C\uDF92','#FEF0E0','BENEFÍCIO VARIÁVEL FAMILIAR (BVF)',
-      'R$ 50 × ' + partes.join(' + '), valBVF, '');
-  }
-  el('linhas').innerHTML = html;
-  el('tg-valor').textContent = fmtR(total);
-  el('comp-tag').textContent = fmtR(total);
-  let nota = '';
-  if (valCOMP > 0 && (valBPI > 0 || valBVF > 0)) nota = 'MÍNIMO GARANTIDO (R$ 600,00) + BENEFÍCIOS VARIÁVEIS';
-  else if (valCOMP > 0) nota = 'BRC + COMPLEMENTAR = MÍNIMO GARANTIDO DE R$ 600,00';
-  else nota = 'BRC ULTRAPASSA R$ 600,00 — SEM NECESSIDADE DE COMPLEMENTAR';
-  el('tg-nota').textContent = nota;
+  var graf=[];
+  graf.push({ico:'\uD83C\uDFE0',nome:'BRC',val:vBRC,cor:'#1155BB'});
+  if(vCOMP>0)graf.push({ico:'\u2795',nome:'COMPLEMENTAR',val:vCOMP,cor:'#1A6B5E'});
+  if(vBPI>0)graf.push({ico:'\uD83C\uDF7C',nome:'BPI',val:vBPI,cor:'#1A7A4A'});
+  if(vBVF>0)graf.push({ico:'\uD83C\uDF92',nome:'BVF',val:vBVF,cor:'#D06010'});
+  if(graf.length>1){
+    el('barra-visual').style.display='block';
+    el('bv-conteudo').innerHTML=graf.map(function(it){var pct=Math.round((it.val/total)*100);return '<div class="bv-row"><div class="bv-ico">'+it.ico+'</div><div class="bv-label">'+it.nome+'</div><div class="bv-track"><div class="bv-fill" style="width:'+pct+'%;background:'+it.cor+'">'+(pct>=14?fmtR(it.val):'')+' </div></div><div class="bv-pct">'+pct+'%</div></div>';}).join('');
+  }else{el('barra-visual').style.display='none';}
 
-  const graf = [];
-  graf.push({ ico:'\uD83C\uDFE0', nome:'BRC', val:valBRC, cor:'#1155BB' });
-  if (valCOMP > 0) graf.push({ ico:'\u2795', nome:'COMPLEMENTAR', val:valCOMP, cor:'#1A6B5E' });
-  if (valBPI  > 0) graf.push({ ico:'\uD83C\uDF7C', nome:'BPI', val:valBPI, cor:'#1A7A4A' });
-  if (valBVF  > 0) graf.push({ ico:'\uD83C\uDF92', nome:'BVF', val:valBVF, cor:'#D06010' });
-  if (graf.length > 1) {
-    el('barra-visual').style.display = 'block';
-    el('bv-conteudo').innerHTML = graf.map(function(it) {
-      var pct = Math.round((it.val / total) * 100);
-      return '<div class="bv-row"><div class="bv-ico">' + it.ico + '</div><div class="bv-label">' + it.nome + '</div><div class="bv-track"><div class="bv-fill" style="width:' + pct + '%;background:' + it.cor + '">' + (pct >= 14 ? fmtR(it.val) : '') + '</div></div><div class="bv-pct">' + pct + '%</div></div>';
-    }).join('');
-  } else {
-    el('barra-visual').style.display = 'none';
-  }
-
-  const conds = [
-    { ico:'\uD83D\uDCCB', txt:'ESTAR INSCRITO NO <strong>CADÚNICO</strong> COM OS DADOS ATUALIZADOS NO CRAS.' },
-    { ico:'\uD83D\uDCB0', txt:'RENDA POR PESSOA ATÉ <strong>R$ 218,00 POR MÊS</strong> (FAMÍLIAS SEM RENDA SE ENQUADRAM AUTOMATICAMENTE).' },
+  var conds=[
+    {ico:'\uD83D\uDCCB',txt:'ESTAR INSCRITO NO <strong>CAD\u00DANICO</strong> COM OS DADOS ATUALIZADOS NO CRAS.'},
+    {ico:'\uD83D\uDCB0',txt:'RENDA POR PESSOA AT\u00C9 <strong>R$ 218,00 POR M\u00CAS</strong> (FAM\u00CDLIAS SEM RENDA SE ENQUADRAM AUTOMATICAMENTE).'},
   ];
-  if (fam.crianca6 > 0 || fam.adolescente > 0) {
-    conds.push({ ico:'\uD83C\uDFEB', txt:'<strong>CRIANÇAS E JOVENS NA ESCOLA</strong> — FREQUÊNCIA MÍNIMA DE 60% (FUNDAMENTAL) E 75% (MÉDIO).' });
-    conds.push({ ico:'\uD83D\uDC89', txt:'<strong>VACINAS EM DIA</strong> E ACOMPANHAMENTO DE SAÚDE DAS CRIANÇAS NA UNIDADE DE SAÚDE.' });
-  }
-  if (fam.gestante > 0) conds.push({ ico:'\uD83C\uDFE5', txt:'<strong>CONSULTAS DE PRÉ-NATAL EM DIA</strong> PARA A(S) GESTANTE(S).' });
-  conds.push({ ico:'\uD83D\uDC69', txt:'RESPONSÁVEL FAMILIAR COM <strong>MAIS DE 16 ANOS</strong>, PREFERENCIALMENTE A <strong>MÃE</strong>.' });
-  el('cond-lista').innerHTML = conds.map(function(c) {
-    return '<div class="cond-item"><div class="cond-ico">' + c.ico + '</div><div class="cond-txt">' + c.txt + '</div></div>';
-  }).join('');
+  if(fam.crianca6>0||fam.adolescente>0){conds.push({ico:'\uD83C\uDFEB',txt:'<strong>CRIAN\u00C7AS E JOVENS NA ESCOLA</strong> \u2014 FREQU\u00CANCIA M\u00CDNIMA DE 60% (FUNDAMENTAL) E 75% (M\u00C9DIO).'});conds.push({ico:'\uD83D\uDC89',txt:'<strong>VACINAS EM DIA</strong> E ACOMPANHAMENTO DE SA\u00DADE DAS CRIAN\u00C7AS NA UNIDADE DE SA\u00DADE.'});}
+  if(fam.gestante>0)conds.push({ico:'\uD83C\uDFE5',txt:'<strong>CONSULTAS DE PR\u00C9-NATAL EM DIA</strong> PARA A(S) GESTANTE(S).'});
+  conds.push({ico:'\uD83D\uDC69',txt:'RESPONS\u00C1VEL FAMILIAR COM <strong>MAIS DE 16 ANOS</strong>, PREFERENCIALMENTE A <strong>M\u00C3E</strong>.'});
+  el('cond-lista').innerHTML=conds.map(function(c){return '<div class="cond-item"><div class="cond-ico">'+c.ico+'</div><div class="cond-txt">'+c.txt+'</div></div>';}).join('');
 }
 
-function linhaHTML(ico, bg, nome, desc, valor, cls) {
-  return '<div class="linha"><div class="linha-ico" style="background:' + bg + '">' + ico + '</div><div class="linha-centro"><div class="linha-nome">' + nome + '</div><div class="linha-desc">' + desc + '</div></div><div class="linha-valor ' + cls + '">' + fmtR(valor) + '</div></div>';
+function lH(ico,bg,nome,desc,valor,cls){
+  return '<div class="linha"><div class="linha-ico" style="background:'+bg+'">'+ico+'</div><div class="linha-centro"><div class="linha-nome">'+nome+'</div><div class="linha-desc">'+desc+'</div></div><div class="linha-valor '+cls+'">'+fmtR(valor)+'</div></div>';
 }
 
 calcular();
